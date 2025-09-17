@@ -1,0 +1,514 @@
+/*Useful video for creating a responsive website https://www.youtube.com/watch?v=srvUrASNj0s&t=4144s*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(245, 239, 231);
+  display: grid;
+  font-family: "Gill Sans", sans-serif;
+  grid-template-columns: 1fr;            /*  --------  1fr  ----------      */
+  grid-template-rows: auto 1fr auto;     /*  "------- header --------" auto */
+  grid-template-areas:                   /*  "------- article --------" 1fr */
+    "header"                             /*  "------- footer ---------" 15em*/
+    "article"
+    "footer";
+  height: 100dvh; /*dvh instead of vh to fit moblie devices better*/
+  margin: 0px;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+:root { /*Changes the color of the entire website*/
+  --primary-color: rgb(216, 196, 182);
+  --secondary-color: rgb(235, 227, 213);
+  --support-color: rgb(96, 108, 93);
+  --text-white: rgb(255,240,240);
+  --background-color: rgb(245, 239, 231);
+}
+
+/* A flxbox, that adds a margin to the main content and also between the sections (main-flexboxes)*/
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 0 auto;
+  width: 97%;
+  justify-content: space-around;
+}
+
+/*Flexbox row, a horisontal section of the screen */
+.main-flexbox {
+  display: flex;  /*youtube: https://youtube/phWxA89Dy94*/
+  flex-wrap: nowrap;
+  gap: 1em;
+  justify-content: space-between;
+}
+
+/*Flexbox row, a horisontal section of the screen with a background colour*/
+.main-flexbox-background {
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+
+/*A flexbox with column direction to stack two items within a section*/
+.main-flexbox-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  flex: 2;
+}
+
+/* A general content box for text/images. Using shorthand (flex) to distribute the space between items*/
+.item {
+  flex: 2;
+  padding: 0em 1em;
+}
+
+/* A general content box for text/images. Using shorthand (flex) to distribute the space between items with colour*/
+.item-background {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  flex: 2;
+  padding: 0em 0.5em;
+}
+
+/*Headerbar w/ hamburgermenu*/
+header {
+  align-items: center;
+  background-color: var(--support-color);
+  display: flex;
+  flex-direction: row;
+  grid-area: header;
+  height: 3em;
+  justify-content: space-between;
+  padding: 1em;
+  position: fixed; /*Makes sure the header won't move when scrolling the page*/
+  width: 100%;
+  z-index: 99; /*Makes sure the header is on top of the page at all times*/
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*The menu hyperlinks*/
+.menu li {
+  margin: 0 1rem;     /*Space between links*/
+  overflow: hidden;   /*Hides the links when container is collapsed*/
+}
+
+.menu a {
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+/*Hotfixes that make the hyperlinks feel smooth*/
+.menu-button-container {
+  align-items: center;
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 2em;
+}
+
+/*Hides the checkbox neccesary to activate the hamburger menu*/
+#menu-toggle {
+  display: none;
+}
+
+/*Article area*/
+article {
+  grid-area: article;
+  margin-bottom: 2em;
+  margin-top: 3em;
+}
+
+/*Footer area*/
+footer {
+  background-color: var(--support-color);
+  color: var(--text-white);
+  font-size: 1.1em;
+  grid-area: footer;
+  padding: 2em 0px;
+  width: 100%;
+}
+
+/*Adds margin to the content insde the footer*/
+.footer-container {
+  margin: 0px auto;
+  padding: 0 3em;
+  max-width: 100%;
+  
+}
+
+/*Grids to seperate logo from hyperlinks*/
+.footer-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  
+}
+
+/*When adding new links the footer, it will add a new column when the size exceeds the height limit*/
+.footer-menu {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  height: 9em; /*Height limit*/
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+/*Space between the hyperlinks*/
+.footer-menu li {
+  margin-left: 2em;
+  margin-bottom: 0.2em;
+  font-size: 0.9em;
+}
+
+.footer-menu a {
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+/*Bottom information, in this case "Canvas 45, all rights..."*/
+.footer-bottom {
+  margin-top: 1em;
+  text-align: center;
+  color: var(--text-white) ;
+  
+}
+
+/*When hovering over a hyperlink, it wil turn blue*/
+header a:hover,
+header a:focus,
+footer a:hover,
+footer a:focus {
+  color: rgb(149, 141, 254)
+}
+
+/* font formatting */
+#main-title {
+  font-size: 5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.main-container p {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.main-container li {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+article h1 {
+  font-size: 5rem;
+  font-weight: 550;
+  text-align: center;
+}
+
+.item h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+article>p {
+  font-size: 3rem;
+  font-weight: 450;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* picture formats*/
+.img-fade {
+  position: relative;
+}
+
+
+#main-photo {
+  width: 100%;
+}
+
+.item-picture {
+  align-items: center;
+  display: flex;
+  flex: 1;
+}
+
+/*Adds fade to the image*/
+.img-fade:after {
+  background: linear-gradient(to bottom,rgba(245, 239, 231, 0) 0%, var(--background-color) 100%);
+  bottom: 0;
+  content: "";
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+
+.main-img-campus-places {
+  height: 450px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.campus-fontsize {
+  font-size: 1.3rem;
+}
+
+/*Images with this selector will be sized properly*/
+.image-size {
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%; 
+  bottom: auto;
+}
+
+.logo-raw {
+  width: 6.3em;
+  height: auto;
+  margin-top: 0.5em;
+}
+
+.logo-footer{
+  width: 12.5em;
+  height: auto;  
+}
+
+/*Sizing uniqe design*/
+.capturebox-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: center;
+  margin: 1em 0em;
+  max-width: 100%;
+  width: 100%;
+}
+
+/*Uniqe design for key inforamtion*/
+ul.capturebox {
+  box-sizing: border-box;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 60% 40%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/*The information held inside the uniqe design*/
+li.capturebox-content {
+  list-style-type: none;
+  padding: 3rem 1rem;
+  text-align: center;
+  max-width: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/*Adds colors the grids*/
+.capturebox-primary-color {
+  background-color: var(--primary-color);
+}
+.capturebox-secondary-color {
+  background-color: var(--secondary-color);
+}
+
+/*Gives the desired size of the uniqe design*/
+.first-row-col1-capturebox {
+  grid-area: 1 / 2 / 2 / 6;
+}
+.first-row-col2-capturebox {
+  grid-area: 1 / 6 / 2 / 8;
+}
+.second-row-col1-capturebox {
+  grid-area: 2 / 2 / 3 / 4;
+}
+.second-row-col2-capturebox {
+  grid-area: 2 / 4 / 3 / 8;
+}
+
+/*Media query to resize some of the content to fit*/
+@media screen and (max-width: 1040px) {
+  #main-title {
+    font-size: 3.5rem;
+  }
+  .item p {
+    font-size: 1.2em;
+  }
+}
+
+/*Creates the hamburger menu and all the following functions to it*/
+@media screen and (max-width: 768px) {
+  /*Design of the three white lines that creates the hamburger meny icon*/
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    background-color: var(--text-white);
+    border-radius: 2px;
+    display: block;
+    height: 4px;
+    position: absolute;
+    width: 30px;
+  }
+
+ /* Commonly used for activating ::before and ::after pseudo-elements 
+ to generate the contnet before activation*/
+  .menu-button::before {
+    content: "";
+    margin-top: -8px;
+  }
+
+  .menu-button::after {
+    content: "";
+    margin-top: 8px;
+  }
+ /* " + " combines sibling elements */
+  #menu-toggle:checked+.menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+
+  /*" 0 " is opacity and its function is tho hide the middle line when checkbox is checked*/
+  #menu-toggle:checked+.menu-button-container .menu-button {
+    background: rgba(255,255,255, 0);
+  }
+
+  /*Turns both of the lines -405 degrees */
+  #menu-toggle:checked+.menu-button-container .menu-button::after { /* " + " combines sibling elements */
+    margin-top: 0px;
+    transform: rotate(-405deg); /* If you want both lines symetrical, 
+    you need to change both transform elements to the same angle, but one in the opposite direction  */
+  }
+
+  .menu-button-container {
+    display: flex;
+  }
+
+  /*Responsible for creating the list and sizing it properly*/
+  .menu {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    margin-top: 3rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    font-size: 1.3em;
+  }
+
+/* " ~ " makes it possbile for sibling elements to interact with eachother */
+  #menu-toggle~.menu li { 
+    border: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1); /* makes the menu retract smoothly*/
+  }
+
+  #menu-toggle:checked~.menu li {
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1); /* makes the menu extend smoothly*/
+  }
+
+  /*The core design of each row of hyperlink*/
+  .menu li {
+    background-color: rgb(125, 137, 127, 0.95);
+    color: var(--text-white);
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+  }
+
+  /*changing flex-direction, so that all the content becomes one column for smaller screens*/
+  .main-flexbox-background {
+    flex-direction: column;
+  }
+
+  /*changing flex-direction, so that all the content becomes one column for smaller screens*/
+  .main-flexbox {
+    flex-direction: column;
+  }
+
+  /*changes order for pictures, so that they show after the text, when in a column (for when pictures are to the right of the text*/
+  .item-picture {
+    order: 2;
+  }
+
+  #main-title {
+    font-size: 3rem;
+
+  }
+  .first-row-col1-capturebox {
+    grid-area: 1 / 1 / 2 / 7;
+  }
+  
+  .first-row-col2-capturebox {
+    grid-area: 1 / 7 / 2 / 9;
+  }
+  
+  .second-row-col1-capturebox {
+    grid-area: 2 / 1 / 3 / 3;
+  }
+  
+  .second-row-col2-capturebox {
+    grid-area: 2 / 3 / 3 / 9;
+  }
+  }
+
+@media (max-width: 625px) {
+  #main-title {
+    font-size: 2.5rem;
+  }
+  .footer-menu li {
+    font-size: 0.95em;
+  }
+
+  /*Only use the capturebox selector if the uniqe design ONLY has 4 gridboxed.
+  otherwise create a new selector with the desired amount for gridboxed*/
+  ul.capturebox {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  /*Makes the 4 gridboxes on the bibliotek-page fill the remaining space 
+  of the collapsed website*/
+  .first-row-col1-capturebox,
+  .first-row-col2-capturebox,
+  .second-row-col1-capturebox,
+  .second-row-col2-capturebox {
+    grid-area: auto;
+  }
+}

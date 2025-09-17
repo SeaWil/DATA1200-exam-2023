@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Accessibility</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Eksamen" />
+    <meta name="keywords" content="HTML, CSS" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css-style/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <picture>
+          <img src="bilde/Logo-raw.png" alt="logo" class="logo-raw" />
+        </picture>
+      </div>
+      <input id="menu-toggle" type="checkbox" />
+      <label class="menu-button-container" for="menu-toggle">
+        <div class="menu-button"></div>
+      </label>
+      <ul class="menu">
+        <li><a href="index.html">Hjem</a></li>
+        <li><a href="topical.html">Topical</a></li>
+        <li><a href="kantine.html">Kantine</a></li>
+        <li><a href="bibliotek.html">Bibliotek</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+      </ul>
+    </header>
+
+    <article>
+      <h1>Accessibility</h1>
+      <section class="main-container">
+        <section class="main-flexbox">
+          <div class="item">
+            <p>
+              Vi brukte google lighthouse som tilgjengelighetsverktøy. Dette programmet skannet nettsiden vår for mulige feil og mangler som kunne
+              ødelegge for sidens funksjonalitet og kvalitet. Den undersøker blant annet manglende alt-attributter, fargekontraster og nettsidens
+              hastighet. På denne siden kan en se bilder/utklipp av analysene for hver enkelt side.
+            </p>
+          </div>
+          <div class="item-picture">
+            <picture>
+              <img src="bilde/Index-access.jpg" alt="Index-accessibility" class="image-size" />
+              <figcaption>Foto: Pia Velde/utklipp av Index accessibility test</figcaption>
+            </picture>
+          </div>
+        </section>
+
+        <section class="main-flexbox">
+          <div class="item-picture">
+            <picture>
+              <img src="bilde/Topical-accessibility.jpg" alt="Topical-accessibility" class="image-size" />
+              <figcaption>Foto: Pia Velde/utklipp av Topical accessibility test</figcaption>
+              <img src="bilde/Kantine-accessibility.jpg" alt="Kantine-accessibility" class="image-size" />
+              <figcaption>Foto: Pia Velde/utklipp av Kantine accessibility test</figcaption>
+              <img src="bilde/Bibliotek-accessibility.jpg" alt="Bibliotek-accessibility" class="image-size" />
+              <figcaption>Foto: Pia Velde/utklipp av Bibliotek accessibility test</figcaption>
+            </picture>
+          </div>
+          <div class="item">
+            <p>
+              På bildene over, under og til venstre kan en se at hver side kommer veldig godt ut på testen. Google lighthouse tester hver enkelt side
+              sin ytelse (performance), tilgjengelighet (accessibility), beste praksis (best practices), søkemotoroptimalisering (SEO) og progressiv
+              webapp (PWA). Du lurer kanskje på hva alt dette betyr? Ytelse handler om hastigheten til nettsiden og tilgjengelighetsfunksjonen tester
+              hvordan nettstedet er tilrettelagt for alle brukere. Lighthouse søkemotoroptimalisering tester nettsidens synlighet og for ting som
+              betyr noe for søkemotorene, mens PWA-funksjonen sjekker om sidene oppfyller kravene til å kunne være en lovlig nettside.
+              <!-- Kilder: https://developer.chrome.com/docs/lighthouse/overview/ -->
+            </p>
+            <p>
+              Da vi først brukte google lighthouse viste rapportene oss en rekke ulike problemer. Noe som gjaldt for de fleste av sidene var manglende
+              alt-tekst på bilder. Dette var heldigvis enkelt for oss å fikse. På topical-siden hadde vi originalt et slideshow. Dette ble ikke tatt
+              godt imot av google lighthouse fordi det gikk negativt ut over sidens lastetid. Vi konkluderte også med at slideshowet ikke hadde noen
+              spesiell funksjon eller nytte til siden. Vi fikk også beskjed om at noen av bildene gjorde at lastetiden ble tregere. Da byttet vi ut
+              noen bilder og gjorde noen andre litt mindre.
+            </p>
+            <p>
+              Når det gjelder egen kreativitet og egne valg brukte vi ganske lang tid på å finne ut hvilken fargepallette vi skulle velge. Her
+              opplevde vi at google lighthouse ikke var til særlig stor hjelp fordi programmet analyserer kontrastene mellom fargene og ikke så mye
+              hvordan fargene harmonerer med hverandre, eller hvor behagelige de er å se på. Her måtte vi rett og slett være litt kreative og prøve å
+              finne passende farger selv. Etter en god del frem og tilbake er vi trygge på at vi fant en god fargesammensetning. Formateringen av de
+              ulike sidene fant vi også hovedsaklig ut selv. Med formatering mener vi hvordan tekst skal stå i forhold til bilder osv. Her designet vi
+              og tegna på ark.
+            </p>
+          </div>
+        </section>
+        <section class="main-flexbox">
+          <div class="item">
+            <p>
+              Alt i alt trivdes vi med å bruke google lighthouse og vi syntes at programmets analyser hjalp vårt arbeid. Likevel var det en del
+              beslutninger vi måtte ta selv. Vi har konkludert med at et program som google lighthouse ikke kan hjelpe med alt. Selv om en får en
+              perfekt score betyr det ikke nødvendigvis at nettsiden er perfekt. For kreativitet har nemlig ingen grenser.
+            </p>
+          </div>
+          <div class="item-picture">
+            <picture>
+              <img src="bilde/Accessibility-accessibility.jpg" alt="Accessibility-accessibility" class="image-size" />
+              <figcaption>Foto: Pia Velde/utklipp av Accessibility sin accessibility test</figcaption>
+            </picture>
+          </div>
+        </section>
+      </section>
+    </article>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <picture>
+              <img src="bilde/Logo.png" alt="logo" class="logo-footer" />
+            </picture>
+          </div>
+          <div class="footer-links">
+            <ul class="footer-menu">
+              <li><a href="index.html">Hjem</a></li>
+              <li><a href="topical.html">Topical</a></li>
+              <li><a href="kantine.html">Campus</a></li>
+              <li><a href="bibliotek.html">Bibliotek</a></li>
+              <li><a href="accessibility.html">Accessibility</a></li>
+              <li><a href="#">Flere linker</a></li>
+              <li><a href="#">Flere linker</a></li>
+              <li><a href="#">Flere linker</a></li>
+              <li><a href="#">Osv..</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">&copy; Canvas 45, all rights reserved.</div>
+      </div>
+    </footer>
+  </body>
+</html>
